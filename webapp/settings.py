@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'django_cron',
+    'django_crontab',
 ]
 
 MIDDLEWARE = [
@@ -122,8 +122,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 
-# django-cron
+# django-crontab
 
-CRON_CLASSES = [
-    'alerts.crons.AlertCronJob'
+CRONJOBS = [
+    ('*/1 * * * *', 'alerts.crons.alert_job')
 ]
